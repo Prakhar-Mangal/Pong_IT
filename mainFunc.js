@@ -99,3 +99,14 @@ function checkCookie(str) {
 	    return true;
 	       }
 	}
+  function levelPassed(l){
+    noStroke();
+  background(0,255,0);
+  fill(255,25,255);
+  textSize(50*w/h);
+  textAlign(CENTER);
+  text('Level '+l+' Passed',50*w,50*h);
+  text('Tab for next level',50*w,70*h);
+  
+  
+}

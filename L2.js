@@ -44,7 +44,7 @@ slides.forEach(slide => {
 }
   else{
     var xx=map(gamma,-30,30,0,windowWidth);
-    slide.move(mouseX,slide.y);
+    slide.move(xx,slide.y);
   }
 
 i++;
@@ -77,23 +77,32 @@ if(collide(ball,slide)){
       pong.play();
 }
 });
+passLevel();
 }
 
 function mouseClicked(){
 //window.location.href='hello.html';
-
  if(c==1){
   window.location.href='index.html';
-    //location.reload();
     c=0;
+  }
+  if(c==2){
+  window.location.href='index.html';
+   
   }
 
 }
+function passLevel(){
+  if(t>20){
+    setCookie('level',0,1);
+    levelPassed(2);
+    c=2;
+    noLoop();
+  }
+  }
 setInterval(function(){
   t++;
-  if(t==7){
-    window.location.href='comingSoon.html';
-  }
+  
   if(t%5==0){
     resetSketch();
   }

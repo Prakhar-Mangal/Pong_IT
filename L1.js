@@ -40,7 +40,7 @@ slides.forEach(slide => {
 }
   else{
     var xx=map(gamma,-30,30,0,windowWidth);
-    slide.move(mouseX,slide.y);
+    slide.move(xx,slide.y);
   }
 
 i++;
@@ -76,23 +76,23 @@ if(collide(ball,slide)){
 passLevel();
 }
 function passLevel(){
-  if(t==5){
+  if(t>20){
     setCookie('level','L2',1);
-    if((window.location.href===getCookie('level')+'.html')){
-      window.location.href=getCookie('level')+'.html';
-  
-}
-else{
-    window.location.href='comingSoon.html';
-}
+    levelPassed(1);
+    c=2
+     noLoop();   
   }
-}
+  }
 function mouseClicked(){
 //window.location.href='hello.html';
  if(c==1){
   window.location.href='index.html';
-    //location.reload();
     c=0;
+
+  }
+  if(c==2){
+  window.location.href=getCookie('level')+'.html';
+   
   }
 
 }
