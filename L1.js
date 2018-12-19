@@ -67,9 +67,7 @@ if(collide(ball,slide)){
 	  b=-b;
       if(b<=0){y=y-4*h}
       if(b>0){y=y+4*h}
-      ball.rr=random(255);
-      ball.g=random(255);
-      ball.b=random(255);
+      ball.updateColor(random(255),random(255),random(255));
       pong.play();
 }
 });
