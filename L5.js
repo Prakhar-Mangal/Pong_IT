@@ -80,7 +80,7 @@ passLevel();
 }
 function passLevel(){
   if(t>20){
-    setCookie('level','index',1);
+    setCookie('level','L5',1);
     levelPassed(5);
     c=2
      noLoop();   
@@ -94,7 +94,7 @@ function mouseClicked(){
 
   }
   if(c==2){
-  window.location.href=getCookie('level')+'.html';
+  window.location.href='index.html';
    
   }
 
