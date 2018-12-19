@@ -40,7 +40,7 @@ slides.forEach(slide => {
 }
   else{
     var xx=map(gamma,-30,30,0,windowWidth);
-    slide.move(xx,slide.y);
+    slide.move(mouseX,slide.y);
   }
 
 i++;
