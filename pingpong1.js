@@ -3,13 +3,13 @@ constructor(x,y,r){
 this.x=x;
 this.y=y;
 this.r=r;
-this.rr=255
-this.g=0
-this.b=0
+this.rr=255;
+this.gg=0;
+this.bb=0;
 
 }
 create(){
-  fill(this.rr,this.g,this.b);
+  fill(this.rr,this.gg,this.bb);
   ellipse(this.x,this.y,this.r*2);
 }
 
@@ -17,6 +17,11 @@ move(x){
   this.x=x;
   this.y=y;
 }
+updateColor(r,g,b){
+ this.rr=r;
+ this.gg=g;
+ this.bb=b;
+  }
 }
 class Bar{
 constructor(x,y,l,b){
@@ -25,24 +30,31 @@ constructor(x,y,l,b){
   this.l=l;
   this.b=b;
   this.m=0;
+  this.rr=255;
+  this.gg=255;
+  this.bb=0;
+
   this.bl=new Ball(this.x,this.y+this.b/2,this.b/2)
   this.bl.rr=225;
-  this.bl.g=255;
-  this.bl.b=0;
+  this.bl.gg=255;
+  this.bl.bb=0;
   this.br=new Ball(this.x+this.l,this.y+this.b/2,this.b/2)
   this.br.rr=225;
-  this.br.g=255;
-  this.br.b=0;
+  this.br.gg=255;
+  this.br.bb=0;
 }
   create(){
      noStroke();
-    fill(255,255,0);
+    fill(this.rr,this.gg,this.bb);
     rect(this.x,this.y,this.l,this.b);
     this.bl.create();
      this.br.create();
-
-    
-  }
+   }
+   updateColor(r,g,b){
+    this.rr=r;
+    this.gg=g;
+    this.bb=b;
+     }
   move(x,y){
     this.x=x;
     this.y=y;
