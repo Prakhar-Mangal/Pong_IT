@@ -85,14 +85,14 @@ function mouseClicked(){
     c=0;
   }
   if(c==2){
-  window.location.href='index.html';
+  window.location.href='L3.html';
    
   }
 
 }
 function passLevel(){
   if(t>20){
-    setCookie('level',0,1);
+    setCookie('level',L4,1);
     levelPassed(2);
     c=2;
     noLoop();
