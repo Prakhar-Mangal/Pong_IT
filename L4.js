@@ -96,8 +96,8 @@ if(collide(ball,slide)){
 passLevel();
 }
 function passLevel(){
-  if(t>2){
-    setCookie('level','index',1);
+  if(t>20){
+    setCookie('level','L5',1);
     levelPassed(4);
     c=2
      noLoop();   
