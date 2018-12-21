@@ -1,9 +1,26 @@
-var w,h;
+var w,h,alpha,beta,gamma;
 function startUp(){
 	w=windowWidth/100;
 	h=windowHeight/100;
 }
-
+window.addEventListener('deviceorientation', function(e)
+{
+  alpha = e.alpha;
+  beta = e.beta;
+  gamma = e.gamma;
+});
+function getMX(){
+  return mouseX;
+ //return map(gamma,-30,30,0,windowWidth);
+}
+function getMY(){
+  return mouseY;
+ //return map(beta,-30,30,0,windowWidth);
+}
+function getMZ(){
+  return mouseX;
+ //return map(alpha,-30,30,0,windowWidth);
+}
 function collide(ball,slide){
 	 dl=dist(slide.bl.x,slide.bl.y,ball.x,ball.y);
      dr=dist(slide.br.x,slide.br.y,ball.x,ball.y);
@@ -45,6 +62,7 @@ function showGameOver(){
   textAlign(CENTER);
   text('GAME OVER',50*w,50*h);
   text('Tab to Restart',50*w,70*h);
+
 }
 function showScore(t){
 fill(125);
@@ -89,24 +107,25 @@ function checkCookie(str) {
       //setCookie("username", user, 365);
     }
   }
-	function checkFileExist(url){
-	  var xhr=new XMLHttpRequest();
-	  xhr.open('HEAD',url,false);
-	  xhr.send();
-	  if(xhr.status=="404"){
-	  return false;}
-	  else {
-	    return true;
-	       }
-	}
-  function levelPassed(l){
+
+  function levelPassed(l,intro){
     noStroke();
   background(0,255,0);
   fill(255,25,255);
   textSize(50*w/h);
   textAlign(CENTER);
-  text('Level '+l+' Passed',50*w,50*h);
-  text('Tab for next level',50*w,70*h);
+  text('Level Passed ',45*w,30*h);
+  text('Next Level is :'+intro,45*w,40*h);
+  text('Tap to Play',45*w,50*h);;
   
+}
+ function levelIntro(l,intro){
+    noStroke();
+  background(120,0,0);
+  fill(255,25,255);
+  textSize(50*w/h);
+  textAlign(CENTER);
+  text(intro,50*w,50*h);
+  text('Tab to start '+l,50*w,70*h);
   
 }

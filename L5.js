@@ -1,4 +1,4 @@
-var c=0 ,t=0,gamma;
+var c=0 ,t=0;
 var slides=[];
 var ball,a=4,b=4,x=200,y=300;
 var slide1,slde2,slide3,socket;
@@ -39,14 +39,14 @@ slides.forEach(slide => {
   slide.x+=2;}
 }
   else{
-    var xx=map(gamma,-30,30,0,windowWidth);
+
     if( slide.y==97*h){
-  //   xxx=map(mouseX,100*w,0,0,w*100)
+  xx=map(mouseX,100*w,0,0,w*100)
     //  slide.move(xxx,slide.y);
-    slide.move(mouseX,slide.y);
+    slide.move(xx,slide.y);
     }
       else
-  //  slide.move(mouseX,slide.y);
+    slide.move(getMX(),slide.y);
     slide.move(ball.x-slide.l/2,slide.y);
   }
 
@@ -109,9 +109,3 @@ setInterval(function(){
   slides.push(sliden1);
 }
 },1000);
-window.addEventListener('deviceorientation', function(e)
-{
-  //alpha = e.alpha;
- // beta = e.beta;
-  gamma = e.gamma;
-});

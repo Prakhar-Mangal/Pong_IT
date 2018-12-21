@@ -1,4 +1,4 @@
-var c=0 ,t=0,gamma;
+var c=0 ,t=0;
 var slides=[];
 var rz=0;
 var ball,a=4,b=4,x=200,y=300;
@@ -44,8 +44,8 @@ slides.forEach(slide => {
 
     if(rz==0){slide.updateColor(225,225,0);}
     if(rz==1){slide.updateColor(225,0,0);}
-    var xx=map(gamma,-30,30,0,windowWidth);
-    slide.move(mouseX,slide.y);
+    
+    slide.move(getMX(),slide.y);
   }
 
 i++;
@@ -98,7 +98,7 @@ passLevel();
 function passLevel(){
   if(t>20){
     setCookie('level','L5',1);
-    levelPassed(4);
+    levelPassed(4,'See the Paddle');
     c=2
      noLoop();   
   }
@@ -130,9 +130,3 @@ else if(rz==0){rz=1;}
 print(rz)
 }
 },1000);
-window.addEventListener('deviceorientation', function(e)
-{
-  //alpha = e.alpha;
- // beta = e.beta;
-  gamma = e.gamma;
-});

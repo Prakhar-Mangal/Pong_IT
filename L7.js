@@ -1,4 +1,4 @@
-var c=0 ,t=0,gamma,p=0;;
+var c=0 ,t=0,p=0;;
 var slides=[];
 var ball,a=6,b=4,x=200,y=300;
 var slide1,slde2,slide3,socket;
@@ -44,17 +44,16 @@ slides.forEach(slide => {
 }
   else{
     
-    slide.move(x,slide.y);
+    slide.move(slide.x,slide.y);
+    slide.x=x
   }
 
 i++;
 });
-var xx=map(gamma,-30,30,0,windowWidth);
-xx=mouseX;
 x+=a;
 y+=b;
 if(checkBounceX(x,ball)){
-  pong.play();
+  //pong.play();
   a=-a;
 }
 if(checkBounceY(y,ball)){
@@ -66,7 +65,7 @@ if(checkBounceY(y,ball)){
   gameover.play();
   noLoop();
 }
-ball.move(xx,y);
+ball.move(getMX(),y);
 slides.forEach(slide => {
 if(collide(ball,slide)){
 	  b=-b;
@@ -118,9 +117,4 @@ setInterval(function(){
   slides.push(sliden1);
 }
 },1000);
-window.addEventListener('deviceorientation', function(e)
-{
-  //alpha = e.alpha;
- // beta = e.beta;
-  gamma = e.gamma;
-});
+

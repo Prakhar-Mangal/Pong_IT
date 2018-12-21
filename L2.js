@@ -1,4 +1,4 @@
-var c=0 ,t=0,gamma,n=0,n1=0;
+var c=0 ,t=0,n=0,n1=0;
 var slides=[];
 var ball,a=4,b=4,x=200,y=300;
 var slide1,slde2,slide3,socket;
@@ -93,7 +93,7 @@ function mouseClicked(){
 function passLevel(){
   if(t>20){
     setCookie('level','L3',1);
-    levelPassed(2);
+    levelPassed(2 ,'Invisible');
     c=2;
     noLoop();
   }
@@ -110,12 +110,7 @@ setInterval(function(){
   slides.push(sliden1);
 }
 },1000);
-window.addEventListener('deviceorientation', function(e)
-{
-  //alpha = e.alpha;
- // beta = e.beta;
-  gamma = e.gamma;
-});
+
 function resetSketch(){
   //slide1=new Bar(slide1.x,slide1.y,100*w,3*h);
   //slide2=new Bar(slide2.x,slide2.y,slide2.l*2,3*h);
@@ -124,7 +119,7 @@ function resetSketch(){
   ball.r= ball.r*3/4;
   slide1.l=slide1.l/1.5;
   slide2.l=slide2.l/1.5;
-}
+
   }
   if(n==0){
     n=1;
