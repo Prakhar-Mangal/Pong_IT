@@ -41,11 +41,13 @@ slides.forEach(slide => {
   else{
     var xx=map(gamma,-30,30,0,windowWidth);
     if( slide.y==97*h){
-     xxx=map(mouseX,100*w,0,0,w*100)
-      slide.move(xxx,slide.y);
+  //   xxx=map(mouseX,100*w,0,0,w*100)
+    //  slide.move(xxx,slide.y);
+    slide.move(mouseX,slide.y);
     }
       else
-    slide.move(mouseX,slide.y);
+  //  slide.move(mouseX,slide.y);
+    slide.move(ball.x-slide.l/2,slide.y);
   }
 
 i++;
@@ -83,7 +85,7 @@ function passLevel(){
     setCookie('level','L5',1);
     levelPassed(5);
     c=2
-     noLoop();   
+     noLoop();
   }
   }
 function mouseClicked(){
@@ -95,7 +97,7 @@ function mouseClicked(){
   }
   if(c==2){
   window.location.href='index.html';
-   
+
   }
 
 }

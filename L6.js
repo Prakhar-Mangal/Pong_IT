@@ -1,6 +1,7 @@
 var c=0 ,t=0,gamma;
 var slides=[];
 var ball,a=4,b=4,x=200,y=300;
+var balln,an=3,bn=3,xn=100,yn=200;
 var slide1,slde2,slide3,socket;
 var pong,gameover;
 function preload(){
@@ -17,6 +18,7 @@ checkCookie('recentTime');
     print('high-'+getCookie('highScore'));
   createCanvas(100*w,100*h);
   ball =new Ball(50*w,50*h,20*w/h);
+  balln =new Ball(50*w,50*h,20*w/h);
   slide1=new Bar(25*w,97*h,25*w,3*h);
   slide2=new Bar(25*w,0,25*w,3*h);
   slides.push(slide1);
@@ -27,6 +29,12 @@ function draw(){
 background(25);
 showScore(t);
 ball.create();
+if(t>2){
+balln.create();
+balln.updateColor(255,255,255);
+xn+=an;
+yn+=bn;
+}
 i=0;
 slides.forEach(slide => {
   slide.create();
@@ -48,9 +56,17 @@ i++;
 
 x+=a;
 y+=b;
+if(collide(balln,slide1)||collide(balln,slide2)){
+  showGameOver();
+  noLoop();
+}
 if(checkBounceX(x,ball)){
   pong.play();
   a=-a;
+}
+if(checkBounceX(xn,balln)){
+  pong.play();
+  an=-an;
 }
 if(checkBounceY(y,ball)){
   showGameOver();
@@ -62,6 +78,7 @@ if(checkBounceY(y,ball)){
   noLoop();
 }
 ball.move(x,y);
+balln.move(xn,yn);
 slides.forEach(slide => {
 if(collide(ball,slide)){
 	  b=-b;
