@@ -125,16 +125,17 @@ function resetSketch(){
   slide1.l=slide1.l/1.5;
   slide2.l=slide2.l/1.5;
 }
+  }
   if(n==0){
     n=1;
   if(a<0)
-  a=-5.5;
+  a=-6;
   else
-    a=5;
+    a=6;
     if(b<0)
-    b=-5.5;
+    b=-6;
     else
-      b=5;
+      b=6;
     }
     else{
       n=0;
