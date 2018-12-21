@@ -32,8 +32,6 @@ ball.create();
 if(t>2){
 balln.create();
 balln.updateColor(255,255,255);
-xn+=an;
-yn+=bn;
 }
 i=0;
 slides.forEach(slide => {
@@ -56,6 +54,9 @@ i++;
 
 x+=a;
 y+=b;
+xn-=an;
+yn-=bn;
+print(ball.x,ball.y,balln.x,ball.y);
 if(collide(balln,slide1)||collide(balln,slide2)){
   showGameOver();
   noLoop();
@@ -67,6 +68,9 @@ if(checkBounceX(x,ball)){
 if(checkBounceX(xn,balln)){
   pong.play();
   an=-an;
+}
+if(checkBounceY(yn,balln)){
+  bn=-bn;
 }
 if(checkBounceY(y,ball)){
   showGameOver();
