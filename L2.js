@@ -128,11 +128,11 @@ function resetSketch(){
   if(n==0){
     n=1;
   if(a<0)
-  a=-5;
+  a=-5.5;
   else
     a=5;
     if(b<0)
-    b=-5;
+    b=-5.5;
     else
       b=5;
     }
