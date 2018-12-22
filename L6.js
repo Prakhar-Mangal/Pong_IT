@@ -92,8 +92,8 @@ if(collide(ball,slide)){
 }
 if(collide(balln,slide)){
 	  bn=-bn;
-      if(bn<=0){y=y-4*h}
-      if(bn>0){y=y+4*h}
+      if(bn<=0){yn=yn-4*h}
+      if(bn>0){yn=yn+4*h}
       pong.play();
 }
 });
