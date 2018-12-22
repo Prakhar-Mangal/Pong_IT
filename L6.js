@@ -2,7 +2,7 @@ var c=0 ,t=0,gamma;
 var slides=[];
 var ball,a=4,b=4,x=200,y=300;
 var balln,an=3,bn=3,xn=100,yn=200;
-var slide1,slde2,slide3,socket;
+var slide1,slide2,slide3,socket;
 var pong,gameover;
 function preload(){
   soundFormats('mp3', 'ogg');
@@ -56,7 +56,6 @@ x+=a;
 y+=b;
 xn-=an;
 yn-=bn;
-print(ball.x,ball.y,balln.x,ball.y);
 if(collide(balln,slide1)||collide(balln,slide2)){
   showGameOver();
   noLoop();
@@ -91,13 +90,19 @@ if(collide(ball,slide)){
       ball.updateColor(random(255),random(255),random(255));
       pong.play();
 }
+if(collide(balln,slide)){
+	  bn=-bn;
+      if(bn<=0){y=y-4*h}
+      if(bn>0){y=y+4*h}
+      pong.play();
+}
 });
 passLevel();
 }
 function passLevel(){
   if(t>20){
-    setCookie('level','L2',1);
-    levelPassed(1);
+    setCookie('level','L7',1);
+    levelPassed(6,'Coming Soon');
     c=2
      noLoop();
   }

@@ -82,8 +82,8 @@ passLevel();
 }
 function passLevel(){
   if(t>20){
-    setCookie('level','L5',1);
-    levelPassed(5);
+    setCookie('level','L6',1);
+    levelPassed(5,'Upset Ball');
     c=2
      noLoop();
   }
@@ -96,7 +96,7 @@ function mouseClicked(){
 
   }
   if(c==2){
-  window.location.href='index.html';
+  window.location.href=getCookie('level')+'.html';
 
   }
 
