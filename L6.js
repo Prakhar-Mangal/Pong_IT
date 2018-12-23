@@ -54,10 +54,15 @@ i++;
 
 x+=a;
 y+=b;
-xn-=an;
-yn-=bn;
+xn+=an;
+yn+=bn;
 if(collide(balln,slide1)||collide(balln,slide2)){
   showGameOver();
+  setCookie('recentTime',t,1);
+  setHScore(t);
+  c=1;
+  t=0;
+  gameover.play();
   noLoop();
 }
 if(checkBounceX(x,ball)){
