@@ -1,7 +1,7 @@
 var c=0 ,t=0;
 var slides=[];
 var ball,a=4,b=4,x=200,y=300;
-var balln,an=3,bn=3,xn=100,yn=200;
+var balln,an=3,bn=3,xn=200,yn=300;
 var slide1,slide2,slide3,socket;
 var pong,gameover;
 function preload(){
@@ -32,6 +32,8 @@ ball.create();
 if(t>2){
 balln.create();
 balln.updateColor(255,255,255);
+xn+=an;
+yn+=bn;
 }
 i=0;
 slides.forEach(slide => {
@@ -54,8 +56,7 @@ i++;
 
 x+=a;
 y+=b;
-xn+=an;
-yn+=bn;
+
 if(collide(balln,slide1)||collide(balln,slide2)){
   showGameOver();
   setCookie('recentTime',t,1);
