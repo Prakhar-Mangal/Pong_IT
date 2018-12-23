@@ -41,7 +41,7 @@ slides.forEach(slide => {
   else{
 
     if( slide.y==97*h){
-  xx=map(mouseX,100*w,0,0,w*100)
+  xx=map(getMX(),100*w,0,0,w*100)
     //  slide.move(xxx,slide.y);
     slide.move(xx,slide.y);
     }

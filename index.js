@@ -36,7 +36,6 @@ function draw(){
   noLoop();
 }
 function mousePressed(){
-
   var d=dist(l1.x,l1.y,mouseX,mouseY);
   if(d<l1.r)
    window.location.href='L1.html';

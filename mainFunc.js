@@ -10,8 +10,8 @@ window.addEventListener('deviceorientation', function(e)
   gamma = e.gamma;
 });
 function getMX(){
-  return mouseX;
- //return map(gamma,-30,30,0,windowWidth);
+ // return mouseX;
+ return map(gamma,-30,30,0,windowWidth);
 }
 function getMY(){
   return mouseY;
