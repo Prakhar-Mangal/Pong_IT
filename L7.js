@@ -96,7 +96,7 @@ function mouseClicked(){
 }
 function passLevel(){
   if(t>30){
-    setCookie('level','L8',1);
+    setCookie('level','L7',1);
     levelPassed(7 ,'comming Soon');
     c=2;
     noLoop();

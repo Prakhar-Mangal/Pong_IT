@@ -13,7 +13,6 @@ function setup(){
 checkCookie('highScore');
 checkCookie('recentTime');
   print(getCookie('recentTime'));
-
     print('high-'+getCookie('highScore'));
   createCanvas(100*w,100*h);
   ball =new Ball(50*w,50*h,20*w/h);

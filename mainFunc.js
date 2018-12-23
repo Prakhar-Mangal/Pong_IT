@@ -112,7 +112,7 @@ function checkCookie(str) {
     noStroke();
   background(0,255,0);
   fill(255,25,255);
-  textSize(50*w/h);
+  textSize(40*w/h);
   textAlign(CENTER);
   text('Level Passed ',45*w,30*h);
   text('Next Level is :'+intro,45*w,40*h);
