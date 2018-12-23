@@ -47,7 +47,7 @@ slides.forEach(slide => {
     }
       else
     slide.move(getMX(),slide.y);
-    slide.move(ball.x-slide.l/2,slide.y);
+    //slide.move(ball.x-slide.l/2,slide.y);
   }
 
 i++;

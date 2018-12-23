@@ -1,4 +1,4 @@
-var c=0 ,t=0,gamma;
+var c=0 ,t=0;
 var slides=[];
 var ball,a=4,b=4,x=200,y=300;
 var balln,an=3,bn=3,xn=100,yn=200;
@@ -45,8 +45,8 @@ slides.forEach(slide => {
   slide.x+=2;}
 }
   else{
-    var xx=map(gamma,-30,30,0,windowWidth);
-    slide.move(mouseX,slide.y);
+
+    slide.move(getMX(),slide.y);
   }
 
 i++;
@@ -102,7 +102,7 @@ passLevel();
 function passLevel(){
   if(t>20){
     setCookie('level','L7',1);
-    levelPassed(6,'Coming Soon');
+    levelPassed(6,'Ports r open');
     c=2
      noLoop();
   }
@@ -128,9 +128,4 @@ setInterval(function(){
   slides.push(sliden1);
 }
 },1000);
-window.addEventListener('deviceorientation', function(e)
-{
-  //alpha = e.alpha;
- // beta = e.beta;
-  gamma = e.gamma;
-});
+
