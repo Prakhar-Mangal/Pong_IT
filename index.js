@@ -20,12 +20,21 @@ function draw(){
   l1.create();l2.create();l3.create();l4.create();l5.create();l6.create();l7.create();
   textSize(l1.r/1.5);  
   fill(255,255,0);
+  textSize(50*w/h);
+  text('PonG-PinG',20*w,17*h);
+  textSize(20*w/h);
+  fill(225);
+  text('A Mature Game',50*w,20*h);
+  text('We present',17*w,10*h); 
+  text('CBKM & PM',70*w,95*h);
   textSize(40*w/h);
-  textAlign(CENTER);
-  text('High-Score: '+getCookie('highScore'),45*w,30*h);
-  text('Latest-Score: '+getCookie('recentTime'),45*w,40*h);
-  text('Level: '+getCookie('level'),45*w,50*h);
+   fill(225,125,202);
+  
+  text('High-Score: '+getCookie('highScore'),20*w,30*h);
+  text('Latest-Score: '+getCookie('recentTime'),20*w,40*h);
+  text('Level: '+getCookie('level'),20*w,50*h);
   fill(255,255,0);
+  textAlign(CENTER); 
   text('L1',l1.x,l1.y+2*h);
   text('L2',l2.x,l2.y+2*h);
   text('L3',l3.x,l3.y+2*h);
