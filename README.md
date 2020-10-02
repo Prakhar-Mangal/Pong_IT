@@ -28,7 +28,7 @@ A mature PingPong Game having multiple Crazy levels.
 
 ## Built With
 
- - **P5.js** Javascript Library
+ - **P5.js** Javascript Library for creative coding
  - **APK-Karan** - Cordova 
 
 ## Creators
